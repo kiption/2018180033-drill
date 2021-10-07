@@ -77,7 +77,7 @@ def draw_line(p1, p2):
     for i in range(0, 360 + 1, 2):
         theta = i
         x = (large_r - small_r) * math.cos(theta) + d * math.cos(((large_r - small_r) / small_r) * theta)
-        y = (large_r - small_r) * math.sin(theta) + d * math.sin(((large_r - small_r) / small_r) * theta)
+        y = (large_r - small_r) * math.sin(theta) - d * math.sin(((large_r - small_r) / small_r) * theta)
         draw_point((x, y))
     draw_point(p2)
 
@@ -86,6 +86,6 @@ def draw_line(p1, p2):
 
 prepare_turtle_canvas()
 
-draw_line((-100, 50), (-50, 0))
+draw_line((-100, 0), (-50, 0))
 
 turtle.done()
