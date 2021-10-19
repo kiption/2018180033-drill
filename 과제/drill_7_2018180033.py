@@ -50,7 +50,7 @@ hide_cursor()
 while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * ani, 100, 100, x, y)
+    character.clip_draw(frame * 100, 1*100, 100, 100, x, y)
     cursor.clip_draw(0, 0, 50, 52, mouse_x, mouse_y)
     update_canvas()
     character_move()
