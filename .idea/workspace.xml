@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="20755a6f-308f-47c2-901e-234473e78202" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/2D 리소스/NES - Super Mario Bros 3 - Stage 1-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/2D 리소스/SNES - Super Mario World - Donut Secret 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/CharacterStaus.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/CharacterStaus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/Main_PlayGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/Main_PlayGame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/MarioStatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/First_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/Player_Mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/Player_Mario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/game_framework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/과제/character_grass.py" beforeDir="false" afterPath="$PROJECT_DIR$/과제/character_grass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/과제/character_moves.py" beforeDir="false" afterPath="$PROJECT_DIR$/과제/character_moves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2dgp_project/MM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2dgp_project/MM2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2dgp_project/game_excute.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/game_excute.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +36,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.character_grass">
+  <component name="RunManager" selected="Python.game_excute">
     <configuration name="First_screen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2018180033-drill" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="title_show" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="game_excute" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2018180033-drill" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -139,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2dgp_project/title_show.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2dgp_project/game_excute.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.game_excute" />
         <item itemvalue="Python.character_grass" />
         <item itemvalue="Python.Main_PlayGame" />
         <item itemvalue="Python.Playing_Game" />
         <item itemvalue="Python.First_screen" />
-        <item itemvalue="Python.title_show" />
       </list>
     </recent_temporary>
   </component>
