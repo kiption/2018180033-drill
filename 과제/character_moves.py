@@ -1,91 +1,99 @@
-import turtle
-import random
-import math
-
-def stop():
-    turtle.bye()
-
-
-def prepare_turtle_canvas():
-    turtle.setup(1024, 768)
-    turtle.bgcolor(0.2, 0.2, 0.2)
-    turtle.penup()
-    turtle.hideturtle()
-    turtle.shape('arrow')
-    turtle.shapesize(2)
-    turtle.pensize(5)
-    turtle.color(1, 0, 0)
-    turtle.speed(100)
-    turtle.goto(-500, 0)
-    turtle.pendown()
-    turtle.goto(480, 0)
-    turtle.stamp()
-    turtle.penup()
-    turtle.goto(0, -360)
-    turtle.pendown()
-    turtle.goto(0, 360)
-    turtle.setheading(90)
-    turtle.stamp()
-    turtle.penup()
-    turtle.home()
-
-    turtle.shape('circle')
-    turtle.pensize(1)
-    turtle.color(0, 0, 0)
-    turtle.speed(50)
-
-    turtle.onkey(stop, 'Escape')
-    turtle.listen()
-
-
-def draw_big_point(p):
-    turtle.goto(p)
-    turtle.color(0.8, 0.9, 0)
-    turtle.dot(15)
-    turtle.write('     '+str(p))
-
-
-def draw_point(p):
-    turtle.goto(p)
-    turtle.dot(5, random.random(), random.random(), random.random())
-
-
-def draw_line_basic(p1, p2):
-    draw_big_point(p1)
-    draw_big_point(p2)
-
-    x1, y1 = p1[0], p1[1]
-    x2, y2 = p2[0], p2[1]
-
-    a = (y2 - y1) / (x2 - x1)
-    b = y1 - x1 * a
-
-    for x in range(x1, x2 + 1, 10):
-        y = a * x + b
-        draw_point((x, y))
-    draw_point(p2)
-
-
-def draw_line(p1, p2):
-    draw_big_point(p1)
-    #draw_big_point(p2)
-    d = math.sqrt(p1[0] * p1[0] + p1[1] * p1[1])
-    large_r = 50
-    small_r = 30
-    x = p1[0]
-    y = p1[1]
-    for i in range(0, 360 + 1, 2):
-        theta = i
-        x = (large_r - small_r) * math.cos(theta) + d * math.cos(((large_r - small_r) / small_r) * theta)
-        y = (large_r - small_r) * math.sin(theta) - d * math.sin(((large_r - small_r) / small_r) * theta)
-        draw_point((x, y))
-    draw_point(p2)
+class GameState:
+    def __init__(self, state):
+        self.enter = state.enter
+        self.exit = state.exit
+        self.pause = state.pause
+        self.resume = state.resume
+        self.handle_events = state.handle_events
+        self.update = state.update
+        self.draw = state.draw
 
 
 
+class TestGameState:
 
-prepare_turtle_canvas()
+    def __init__(self, name):
+        self.name = name
 
-draw_line((-100, 0), (-50, 0))
+    def enter(self):
+        print("State [%s] Entered" % self.name)
 
-turtle.done()
+    def exit(self):
+        print("State [%s] Exited" % self.name)
+
+    def pause(self):
+        print("State [%s] Paused" % self.name)
+
+    def resume(self):
+        print("State [%s] Resumed" % self.name)
+
+    def handle_events(self):
+        print("State [%s] handle_events" % self.name)
+
+    def update(self):
+        print("State [%s] update" % self.name)
+
+    def draw(self):
+        print("State [%s] draw" % self.name)
+
+
+
+running = None
+stack = None
+
+
+def change_state(state):
+    global stack
+    if (len(stack) > 0):
+        # execute the current state's exit function
+        stack[-1].exit()
+        # remove the current state
+        stack.pop()
+    stack.append(state)
+    state.enter()
+
+
+
+def push_state(state):
+    global stack
+    if (len(stack) > 0):
+        stack[-1].pause()
+    stack.append(state)
+    state.enter()
+
+
+
+def pop_state():
+    global stack
+    if (len(stack) > 0):
+        stack[-1].exit()
+        stack.pop()
+    if (len(stack) > 0):
+        stack[-1].resume()
+
+
+def quit():
+    global running
+    running = False
+
+
+def run(First_screen):
+    global running, stack
+    running = True
+    stack = [First_screen]
+    First_screen.enter()
+    while (running):
+        stack[-1].handle_events()
+        stack[-1].update()
+        stack[-1].draw()
+    while (len(stack) > 0):
+        stack[-1].exit()
+        stack.pop()
+
+
+def test_game_framework():
+    First_screen = TestGameState("FirstState")
+    run(First_screen)
+
+if __name__ == '__main__':
+    test_game_framework()

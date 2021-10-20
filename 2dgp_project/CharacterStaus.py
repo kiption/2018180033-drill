@@ -8,14 +8,13 @@ class state(Enum):
     Mario_Die = 4
     Mario_landing = 5
 
-class state_block(Enum):
+class block_adjude(Enum):
     S_Idle = 0
     S_Hiting =1
     S_Brocking = 2
-    S_Broken = 3
-    S_Hited = 4
+    S_Hited = 3
 
-class Mario_state(Enum):
+class Mario_Growth(Enum):
     mario =0
     Super_mario =1
     Fire_mario = 2

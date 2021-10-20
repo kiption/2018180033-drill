@@ -66,15 +66,10 @@ def push_state(state):
 def pop_state():
     global stack
     if (len(stack) > 0):
-        # execute the current state's exit function
         stack[-1].exit()
-        # remove the current state
         stack.pop()
-
-    # execute resume function of the previous state
     if (len(stack) > 0):
         stack[-1].resume()
-
 
 
 def quit():
@@ -82,26 +77,23 @@ def quit():
     running = False
 
 
-def run(start_state):
+def run(First_screen):
     global running, stack
     running = True
-    stack = [start_state]
-    start_state.enter()
+    stack = [First_screen]
+    First_screen.enter()
     while (running):
         stack[-1].handle_events()
         stack[-1].update()
         stack[-1].draw()
-    # repeatedly delete the top of the stack
     while (len(stack) > 0):
         stack[-1].exit()
         stack.pop()
 
 
 def test_game_framework():
-    start_state = TestGameState('StartState')
-    run(start_state)
-
-
+    First_screen = TestGameState("FirstState")
+    run(First_screen)
 
 if __name__ == '__main__':
     test_game_framework()
