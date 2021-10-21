@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20755a6f-308f-47c2-901e-234473e78202" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/MM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/MM2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dgp_project/game_excute.py" beforeDir="false" afterPath="$PROJECT_DIR$/2dgp_project/game_excute.py" afterDir="false" />
-    </list>
+    <list default="true" id="20755a6f-308f-47c2-901e-234473e78202" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
