@@ -4,7 +4,7 @@ from CharacterStaus import state
 from Player_Mario import characterMario
 import title_show
 import game_framework
-
+import pygame
 name = "Main_play"
 
 def handle_events():
@@ -79,13 +79,13 @@ def update():
     #stage1_Bk.update(player.scroll_x)
 
     #Ui.update(0,0,0)
-
-
-
+display=pygame.display.set_mode(size)
+blue=(0,0,255)
 def draw():
     clear_canvas()
     #stage1_Bk.draw()
     player.draw()
+    pygame.draw.rect(display,blue,(200,150,100,50))
     #for block in Platform:
     #    block.draw()
     #for ground in Grounds:
