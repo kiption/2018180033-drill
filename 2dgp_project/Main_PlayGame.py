@@ -13,41 +13,38 @@ def handle_events():
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
-
         if event.type == SDL_KEYUP and event.key == SDLK_RIGHT:
             if (player.move_dir == 1):
                 player.is_move = False
                 player.state = state.Mario_Idle
+                player.frame = 0
         if event.type == SDL_KEYUP and event.key == SDLK_LEFT:
             if(player.move_dir == -1):
                 player.is_move = False
                 player.state = state.Mario_Idle
+                player.frame = 0
         if event.type == SDL_KEYDOWN and event.key == SDLK_RIGHT:
             player.state = state.Mario_Move
-
             player.is_move = True
-            player.dirction = 1
+            player.direction = 10
             player.move_dir = 1
         if event.type == SDL_KEYDOWN and event.key == SDLK_LEFT:
             player.state = state.Mario_Move
             player.is_move = True
-            player.dirction = 2
+            player.direction = 9
             player.move_dir = -1
         if event.type == SDL_KEYDOWN and event.key == SDLK_c:
-            player.state = state.S_jump
-            #player.jump_charge = True
-            #player.jump_on = True
-
+            player.state = state.Mario_Jump
+            player.jump_charge = True
+            player.jump_on = True
         if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_state(title_show)
-
         if event.type == SDL_KEYUP and event.key == SDLK_c:
-            #player.jump_charge = False
+            player.jump_charge = False
             pass
 
 
 def enter():
-
     global player
     global Ui
     global stage1_Bk
@@ -63,14 +60,12 @@ def enter():
     #Platform =[Block('random',200,200),Block('brick',500,200)]
     #Grounds =[Ground(1104)]
 
-
-
 def exit():
     global player , random_b ,stage1_Bk,Grounds,Platform
     del (player)
-    del (Platform)
-    del (Grounds)
-    del (stage1_Bk)
+    #del (Platform)
+    #del (Grounds)
+    #del (stage1_Bk)
 
 def update():
 
@@ -78,12 +73,13 @@ def update():
     #    block.update(player.scroll_x)
     #for ground in Grounds:
     #    ground.update(player.scroll_x)
-    #player.update()
+    player.update()
+
 
     #stage1_Bk.update(player.scroll_x)
 
     #Ui.update(0,0,0)
-    pass
+
 
 
 def draw():

@@ -82,6 +82,7 @@ def run(First_screen):
     running = True
     stack = [First_screen]
     First_screen.enter()
+
     while (running):
         stack[-1].handle_events()
         stack[-1].update()
